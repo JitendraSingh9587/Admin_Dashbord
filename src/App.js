@@ -1,10 +1,11 @@
 import './App.css';
+import Signin from './Components/AuthenticationPage/Signin';
 
 function App() {
   return (
-    <div className="App">
-      Hello
-    </div>
+    <>
+      <Signin />
+    </>
   );
 }
 
