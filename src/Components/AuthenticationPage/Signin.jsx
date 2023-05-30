@@ -14,7 +14,7 @@ function Signin() {
     const [open, setOpen] = useState(false)
     const [erroropen, setErrorpen] = useState(false)
     const [meassage, setMeassage] = useState("")
-    const [bgColor, setBgColor] = useState(true)
+    const [bgColor, setBgColor] = useState(false)
 
     const horizontal = "right"
     const vertical = "top"
@@ -51,7 +51,7 @@ function Signin() {
         if (bgColor === true) {
             document.querySelector('body').style.background = "#fff";
         }
-        else {
+        else if (bgColor === false) {
             document.querySelector('body').style.background = "#5A5A5A";
         }
     }
@@ -63,7 +63,7 @@ function Signin() {
                     <Grid className={` ${styles.GridItems} ${styles.MobileViewNone}`} item lg={6} md={5} sm={12}>
                         <Avatar
                             onClick={bgColorBtn}
-                            src={bgColor ? BackgroundColorImgDark : BackgroundColorImg}
+                            src={bgColor === true ? BackgroundColorImgDark : BackgroundColorImg}
                             className={styles.BgButton}
                             sx={{ width: 50, height: 50 }}
                         />
