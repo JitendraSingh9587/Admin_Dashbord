@@ -5,6 +5,8 @@ import BackgroundColorImg from '../Images/Comman/Theme Button.svg';
 import BackgroundColorImgDark from '../Images/Comman/ThemeDarkBtn.svg';
 import Braslate from '../Images/AuthPage/Bracelet Image.svg';
 import { Alert, Avatar, Button, Grid, Snackbar, TextField } from '@mui/material';
+import Cookies from 'universal-cookie';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -18,6 +20,7 @@ function Signin() {
 
     const horizontal = "right"
     const vertical = "top"
+    const navigate = useNavigate()
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -27,14 +30,23 @@ function Signin() {
     };
 
     const handlesubbmit = (e) => {
+        const cookies = new Cookies();
+
         e.preventDefault()
         if (email === "jitendra@singh.com" && password === "jitendra@singh.com") {
             setOpen(true);
             setMeassage("Super Admin credentials are correct. The login process has begun.")
+            cookies.set("loggedin", true, { path: "/" });
+            cookies.set("redirect", 1, { path: "/" });
+            navigate("/home")
+
 
         } else if (email === "jitendra@singh.in" && password === "jitendra@singh.in") {
             setMeassage("Your credentials are correct. The login process has begun.")
             setOpen(true);
+            cookies.set("loggedin", true, { path: "/" });
+            cookies.set("redirect", 1, { path: "/" });
+            navigate("/home")
         }
         else {
             console.log("false");
