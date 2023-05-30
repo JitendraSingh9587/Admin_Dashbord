@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './Signin.module.css';
 import Logo from '../Images/Comman/Logo.svg';
 import BackgroundColorImg from '../Images/Comman/Theme Button.svg';
+import BackgroundColorImgDark from '../Images/Comman/ThemeDarkBtn.svg';
 import Braslate from '../Images/AuthPage/Bracelet Image.svg';
 import { Alert, Avatar, Button, Grid, Snackbar, TextField } from '@mui/material';
 
@@ -13,6 +14,7 @@ function Signin() {
     const [open, setOpen] = useState(false)
     const [erroropen, setErrorpen] = useState(false)
     const [meassage, setMeassage] = useState("")
+    const [bgColor, setBgColor] = useState(true)
 
     const horizontal = "right"
     const vertical = "top"
@@ -44,6 +46,15 @@ function Signin() {
         setOpen(false);
         setErrorpen(false)
     };
+    const bgColorBtn = () => {
+        setBgColor(!bgColor)
+        if (bgColor === true) {
+            document.querySelector('body').style.background = "#fff";
+        }
+        else {
+            document.querySelector('body').style.background = "#5A5A5A";
+        }
+    }
 
     return (
         <>
@@ -51,7 +62,8 @@ function Signin() {
                 <Grid container className={styles.AuthWrapperGrid}>
                     <Grid className={` ${styles.GridItems} ${styles.MobileViewNone}`} item lg={6} md={5} sm={12}>
                         <Avatar
-                            src={BackgroundColorImg}
+                            onClick={bgColorBtn}
+                            src={bgColor ? BackgroundColorImgDark : BackgroundColorImg}
                             className={styles.BgButton}
                             sx={{ width: 50, height: 50 }}
                         />
