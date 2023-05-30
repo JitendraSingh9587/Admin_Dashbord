@@ -1,5 +1,6 @@
 .AuthWrapperGrid {
     min-height: 100vh;
+    justify-content: center;
 }
 
 .BgButton {
@@ -9,10 +10,20 @@
 .AuthPageLeftImageWrapper {
     display: flex;
     align-items: center;
+    max-width: 731;
+}
+
+.AuthPageLeftImageWrapper img {
+    width: 100%;
 }
 
 .GridItems {
-    height: 100%;
+    height: 100vh;
+}
+
+.Watchimagewrapper {
+    height: 90%;
+    display: flex;
 }
 
 .LoginFormWrapper {
@@ -43,6 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
 .Signintext {
@@ -57,7 +69,6 @@
 .InputWrapper {
     width: 450px;
     margin-bottom: 15px;
-    /* width: 100%; */
 }
 
 .InputFiledsLogin {
@@ -81,4 +92,15 @@
     height: 70px;
     background: #EC6453 !important;
     border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .MobileViewNone {
+        display: none;
+    }
+
+    .InputWrapper {
+        width: 350px;
+    }
 }
