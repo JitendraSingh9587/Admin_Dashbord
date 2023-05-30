@@ -101,13 +101,13 @@ function Signin() {
                 </Grid>
             </div>
             {/* Success Snackbar */}
-            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical, horizontal }} key={vertical + horizontal}>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical, horizontal }} >
                 <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                     {meassage}
                 </Alert>
             </Snackbar>
             {/* Error Snackbar */}
-            <Snackbar open={erroropen} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical, horizontal }} key={vertical + horizontal}>
+            <Snackbar open={erroropen} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical, horizontal }} >
                 <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
                     The provided credentials are incorrect.
                 </Alert>

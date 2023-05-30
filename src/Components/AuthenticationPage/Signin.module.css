@@ -4,7 +4,10 @@
 }
 
 .BgButton {
-    margin: 20px 25px;
+    position: fixed !important;
+    top: 20px;
+    left: 25px;
+    cursor: pointer;
 }
 
 .AuthPageLeftImageWrapper {
@@ -22,7 +25,7 @@
 }
 
 .Watchimagewrapper {
-    height: 90%;
+    height: 100%;
     display: flex;
 }
 
