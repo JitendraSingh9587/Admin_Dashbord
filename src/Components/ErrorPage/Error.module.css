@@ -1,0 +1,36 @@
+.ErrorWrapper {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Errormsg h1 {
+    font-family: titillium web, sans-serif;
+    font-size: 186px;
+    font-weight: 900;
+    margin: 0;
+    background: url(../Images/Comman/textbg.webp);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: center;
+}
+
+.Errormsg p {
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.Errormsg a {
+    background: #EC6453;
+    border-radius: 15px;
+    font-style: normal;
+    font-weight: 700;
+    color: #FFFFFF;
+    padding: 15px;
+    text-decoration: none;
+}
