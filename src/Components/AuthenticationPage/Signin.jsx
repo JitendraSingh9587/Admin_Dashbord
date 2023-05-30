@@ -35,6 +35,7 @@ function Signin() {
                         <div className={styles.AuthPageLeftImageWrapper}>
                             <img
                                 src={Braslate}
+                                alt='img'
                             />
                         </div>
                     </div>
