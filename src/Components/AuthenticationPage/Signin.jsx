@@ -12,6 +12,7 @@ function Signin() {
     const [password, setPassword] = useState('')
     const [open, setOpen] = useState(false)
     const [erroropen, setErrorpen] = useState(false)
+    const [meassage, setMeassage] = useState("")
 
     const horizontal = "right"
     const vertical = "top"
@@ -26,7 +27,11 @@ function Signin() {
     const handlesubbmit = (e) => {
         e.preventDefault()
         if (email === "jitendra@singh.com" && password === "jitendra@singh.com") {
-            console.log('email', email, 'password', password);
+            setOpen(true);
+            setMeassage("Super Admin credentials are correct. The login process has begun.")
+
+        } else if (email === "jitendra@singh.in" && password === "jitendra@singh.in") {
+            setMeassage("Your credentials are correct. The login process has begun.")
             setOpen(true);
         }
         else {
@@ -86,7 +91,7 @@ function Signin() {
             {/* Success Snackbar */}
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical, horizontal }} key={vertical + horizontal}>
                 <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                    Your credentials are correct. The login process has begun.
+                    {meassage}
                 </Alert>
             </Snackbar>
             {/* Error Snackbar */}
