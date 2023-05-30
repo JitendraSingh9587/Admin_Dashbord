@@ -7,6 +7,7 @@ import Braslate from '../Images/AuthPage/Bracelet Image.svg';
 import { Alert, Avatar, Button, Grid, Snackbar, TextField } from '@mui/material';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
+import ProgressLoader from '../Loaders/Progressbar/ProgressLoader';
 
 
 
@@ -17,6 +18,7 @@ function Signin() {
     const [erroropen, setErrorpen] = useState(false)
     const [meassage, setMeassage] = useState("")
     const [bgColor, setBgColor] = useState(false)
+    const [loader, setLoader] = useState(false)
 
     const horizontal = "right"
     const vertical = "top"
@@ -36,17 +38,23 @@ function Signin() {
         if (email === "jitendra@singh.com" && password === "jitendra@singh.com") {
             setOpen(true);
             setMeassage("Super Admin credentials are correct. The login process has begun.")
+            setLoader(true)
             cookies.set("loggedin", true, { path: "/" });
             cookies.set("redirect", 1, { path: "/" });
-            navigate("/home")
+            setTimeout(() => {
+                navigate("/home")
+            }, 2000);
 
 
         } else if (email === "jitendra@singh.in" && password === "jitendra@singh.in") {
             setMeassage("Your credentials are correct. The login process has begun.")
             setOpen(true);
+            setLoader(true)
             cookies.set("loggedin", true, { path: "/" });
             cookies.set("redirect", 1, { path: "/" });
-            navigate("/home")
+            setTimeout(() => {
+                navigate("/home")
+            }, 2000);
         }
         else {
             console.log("false");
@@ -70,6 +78,7 @@ function Signin() {
 
     return (
         <>
+            {loader && <ProgressLoader />}
             <div className={styles.Authentication_Page_Wrapper}>
                 <Grid container className={styles.AuthWrapperGrid}>
                     <Grid className={` ${styles.GridItems} ${styles.MobileViewNone}`} item lg={6} md={5} sm={12}>
