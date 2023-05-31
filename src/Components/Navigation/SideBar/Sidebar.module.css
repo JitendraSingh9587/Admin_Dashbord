@@ -1,0 +1,51 @@
+.SidebarWrapper {
+    min-height: calc(100vh - 120px);
+    border-right: 3px solid #FA9E93;
+    padding: 5px 15px 0 25px;
+}
+
+.SidebarContainer {
+    background: #E6E6E6;
+    border-radius: 15px;
+}
+
+.SidebarContainer {
+    padding: 15px;
+}
+
+.SidebarBtnWrapper {
+    border-radius: 10px;
+    padding: 13px 10px;
+    margin-bottom: 10px;
+    color: #191919;
+}
+
+.SidebarBtnWrapper:hover {
+    background: #C91416;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.SidebarBtnWrapperText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: capitalize;
+    margin-bottom: 2px;
+}
+
+.SidebarBtnWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.SidebarBtnWrapperImage {
+    margin-right: 10px;
+    max-width: 20px;
+}
+
+.SidebarBtnWrapperImage img {
+    width: 100%;
+}

@@ -1,8 +1,0 @@
-.Wrapper {
-    min-height: calc(100vh - 120px);
-}
-
-.SidebarWrapper {
-    border-right: 3px solid #FA9E93;
-    height: 100%;
-}

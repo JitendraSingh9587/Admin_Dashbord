@@ -9,13 +9,11 @@ function HomePage() {
     return (
         <>
             <Navbar />
-            <Grid container className={CommanCss.Wrapper}>
-                <Grid item xs={1.7}>
-                    <div className={CommanCss.SidebarWrapper}>
-                        <Sidebar />
-                    </div>
+            <Grid container className={CommanCss.GridWrapper}>
+                <Grid item xs={1.9}>
+                    <Sidebar />
                 </Grid >
-                <Grid item xs={10.3}>
+                <Grid item xs={10.1}>
 
                 </Grid >
             </Grid>
