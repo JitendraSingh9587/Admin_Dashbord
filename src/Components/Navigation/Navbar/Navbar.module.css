@@ -1,0 +1,49 @@
+.NavbarWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.NavbarlogoWrapper {
+    max-width: 150px;
+    cursor: pointer;
+}
+
+.NavbarlogoWrapper img {
+    width: 100%;
+}
+
+.userInfoWrapper {
+    margin-right: 57px;
+    height: 50px;
+    background: #000000;
+    border-radius: 40px;
+    padding: 7px 7px 7px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInfoWrapper h1 {
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    text-transform: capitalize;
+}
+
+.avatarnavbar {
+    margin-left: 10px;
+}
+
+.Bgcolorwrapper {
+    cursor: pointer;
+    max-width: 50px;
+}
+
+.Bgcolorwrapper img {
+    width: 100%;
+}
