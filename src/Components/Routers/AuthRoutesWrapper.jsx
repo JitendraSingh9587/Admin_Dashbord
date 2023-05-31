@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 import { Routes, Route } from "react-router-dom"
 import Signin from '../AuthenticationPage/Signin';
 import ProtectedRoute from './ProtectedRoute'
@@ -10,15 +10,14 @@ import hacker from '../Images/Comman/hacker.png';
 export const UserNavData = createContext()
 
 function AuthRoutesWrapper() {
-
-
-    let Userdata = {
+    const [userdata, setUserdata] = useState({
         name: "jitendra singh",
         image: hacker
-    }
+    })
+    let value = { userdata, setUserdata }
     return (
         <>
-            <UserNavData.Provider value={Userdata}>
+            <UserNavData.Provider value={value}>
                 <Routes>
                     <Route path="/" element={<Signin />} />
 

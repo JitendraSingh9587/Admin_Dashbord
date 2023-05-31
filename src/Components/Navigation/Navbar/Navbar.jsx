@@ -16,7 +16,7 @@ function Navbar() {
     const [waitLoader, setWaitLoader] = useState(false)
 
     // useContext for navbar data
-    const Userdata = useContext(UserNavData)
+    const { userdata } = useContext(UserNavData)
 
     // UseNavigate in varibale
     const navigate = useNavigate()
@@ -72,8 +72,8 @@ function Navbar() {
                 <div>
                     <div className={styles.UserInfoNavbar}>
                         <div className={styles.userInfoWrapper}>
-                            <h1>{Userdata.name}</h1>
-                            <Avatar src={Userdata.image} onClick={EditLogoutAction} className={styles.avatarnavbar} sx={{ width: 35, height: 35 }} />
+                            <h1>{userdata.name}</h1>
+                            <Avatar src={userdata.image} onClick={EditLogoutAction} className={styles.avatarnavbar} sx={{ width: 35, height: 35 }} />
                         </div>
                         {userOptions && <div className={styles.LogoutEditPositionWrapper}>
                             <div className={styles.userEditLogoutWrapper}>
