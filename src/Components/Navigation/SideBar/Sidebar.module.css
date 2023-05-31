@@ -50,3 +50,17 @@
 .SidebarBtnWrapperImage img {
     width: 100%;
 }
+
+@media only screen and (max-width: 1100px) {
+    .SidebarBtnWrapperText {
+        display: none;
+    }
+
+    .SidebarBtnWrapper {
+        justify-content: center;
+    }
+
+    .SidebarBtnWrapperImage {
+        margin: 0;
+    }
+}
