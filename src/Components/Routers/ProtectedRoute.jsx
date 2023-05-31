@@ -11,7 +11,7 @@ function ProtectedRoute(props) {
         if (cookies.get("loggedin") !== "true" && cookies.get("redirect") !== 1) {
             navigate("/")
         }
-    }, [])
+    },)
 
     return (
         <>
