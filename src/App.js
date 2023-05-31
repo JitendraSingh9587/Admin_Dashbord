@@ -1,12 +1,14 @@
 import "@fontsource/roboto";
 import './App.css';
-import RoutesWrapper from './Components/Routers/RoutesWrapper';
+import AuthRoutesWrapper from './Components/Routers/AuthRoutesWrapper';
 import { BrowserRouter } from 'react-router-dom';
+import ProtectedRoutesWrapper from "./Components/Routers/ProtectedRoutesWrapper";
 
 function App() {
   return (
     <BrowserRouter>
-      <RoutesWrapper />
+      <AuthRoutesWrapper />
+      <ProtectedRoutesWrapper />
     </BrowserRouter>
   );
 }
