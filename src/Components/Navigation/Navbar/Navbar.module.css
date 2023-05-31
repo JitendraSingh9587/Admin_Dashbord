@@ -15,7 +15,6 @@
 }
 
 .userInfoWrapper {
-    margin-right: 57px;
     height: 50px;
     background: #000000;
     border-radius: 40px;
@@ -37,6 +36,7 @@
 
 .avatarnavbar {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .Bgcolorwrapper {
@@ -46,4 +46,30 @@
 
 .Bgcolorwrapper img {
     width: 100%;
+}
+
+.userEditLogoutWrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+}
+
+.UserInfoNavbar {
+    position: relative;
+    margin-right: 57px;
+}
+
+.userEditLogoutWrapper button {
+    background: #FFFFFF;
+    border: 1px solid #808080;
+    border-radius: 8px;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.LogoutEditPositionWrapper {
+    position: absolute;
+    right: 0;
+    top: 70px;
 }

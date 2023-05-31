@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
     const [bgColor, setbgColor] = useState(false)
+    const [userOptions, setUserOptions] = useState(false)
 
     // UseNavigate in varibale
     const navigate = useNavigate()
@@ -28,6 +29,12 @@ function Navbar() {
             document.querySelector('body').style.background = "#5A5A5A";
         }
     }
+
+    // Edit and Logout wrapper hide and show function
+    const EditLogoutAction = () => {
+        setUserOptions(!userOptions)
+    }
+
     return (
         <>
             <div className={styles.NavbarWrapper}>
@@ -45,8 +52,14 @@ function Navbar() {
                     <div className={styles.UserInfoNavbar}>
                         <div className={styles.userInfoWrapper}>
                             <h1>Safelet</h1>
-                            <Avatar src='' className={styles.avatarnavbar} sx={{ width: 35, height: 35 }} />
+                            <Avatar src='' onClick={EditLogoutAction} className={styles.avatarnavbar} sx={{ width: 35, height: 35 }} />
                         </div>
+                        {userOptions && <div className={styles.LogoutEditPositionWrapper}>
+                            <div className={styles.userEditLogoutWrapper}>
+                                <button>Edit</button>
+                                <button>Log Out</button>
+                            </div>
+                        </div>}
                     </div>
                 </div>
             </div>
