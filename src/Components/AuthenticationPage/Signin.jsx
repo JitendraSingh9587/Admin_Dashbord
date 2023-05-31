@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Signin.module.css';
 import Logo from '../Images/Comman/Logo.svg';
 import BackgroundColorImg from '../Images/Comman/Theme Button.svg';
@@ -30,6 +30,21 @@ function Signin() {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
+
+    useEffect(() => {
+        const cookies = new Cookies();
+        const login = cookies.get("loggedin")
+        const redirect = cookies.get("redirect")
+
+        if (login === "true" && redirect !== 0) {
+            if (redirect === "1") {
+                navigate("/home")
+            }
+        }
+
+
+    })
+
 
     const handlesubbmit = (e) => {
         const cookies = new Cookies();
