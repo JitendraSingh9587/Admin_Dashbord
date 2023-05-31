@@ -37,6 +37,8 @@
 .avatarnavbar {
     margin-left: 10px;
     cursor: pointer;
+    border-radius: 50%;
+    background: #fff;
 }
 
 .Bgcolorwrapper {

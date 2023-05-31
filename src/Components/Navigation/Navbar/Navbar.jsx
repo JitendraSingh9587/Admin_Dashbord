@@ -73,7 +73,7 @@ function Navbar() {
                     <div className={styles.UserInfoNavbar}>
                         <div className={styles.userInfoWrapper}>
                             <h1>{Userdata.name}</h1>
-                            <Avatar src='' onClick={EditLogoutAction} className={styles.avatarnavbar} sx={{ width: 35, height: 35 }} />
+                            <Avatar src={Userdata.image} onClick={EditLogoutAction} className={styles.avatarnavbar} sx={{ width: 35, height: 35 }} />
                         </div>
                         {userOptions && <div className={styles.LogoutEditPositionWrapper}>
                             <div className={styles.userEditLogoutWrapper}>

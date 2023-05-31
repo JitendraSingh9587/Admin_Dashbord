@@ -4,6 +4,7 @@ import Signin from '../AuthenticationPage/Signin';
 import ProtectedRoute from './ProtectedRoute'
 import HomePage from '../Home-Page/HomePage'
 import ErrorPage from '../ErrorPage/ErrorPage'
+import hacker from '../Images/Comman/hacker.png';
 
 // Context api for navbar data
 export const UserNavData = createContext()
@@ -12,7 +13,8 @@ function AuthRoutesWrapper() {
 
 
     let Userdata = {
-        name: "jitendra singh"
+        name: "jitendra singh",
+        image: hacker
     }
     return (
         <>
