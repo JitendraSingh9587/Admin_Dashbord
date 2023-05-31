@@ -12,6 +12,7 @@ import ProgressLoader from '../Loaders/Progressbar/ProgressLoader';
 
 
 function Signin() {
+    // States For application
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [open, setOpen] = useState(false)
@@ -20,17 +21,24 @@ function Signin() {
     const [bgColor, setBgColor] = useState(false)
     const [loader, setLoader] = useState(false)
 
+    // Snackbar Position Varibale
     const horizontal = "right"
     const vertical = "top"
+
+    // UseNavigate in varibale
     const navigate = useNavigate()
 
+    // Capture the email from input field
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
+
+    // Capture the Password from input field
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
 
+    // Use Effect To check Wheteher the User is Looged in or not
     useEffect(() => {
         const cookies = new Cookies();
         const login = cookies.get("loggedin")
@@ -41,15 +49,13 @@ function Signin() {
                 navigate("/home")
             }
         }
-
-
     })
 
-
+    // Login Button Hnadler
     const handlesubbmit = (e) => {
+        e.preventDefault()
         const cookies = new Cookies();
 
-        e.preventDefault()
         if (email === "jitendra@singh.com" && password === "jitendra@singh.com") {
             setOpen(true);
             setMeassage("Super Admin credentials are correct. The login process has begun.")
@@ -77,10 +83,13 @@ function Signin() {
         }
     }
 
+    // Snackbar close Function
     const handleClose = () => {
         setOpen(false);
         setErrorpen(false)
     };
+
+    // Background Color Function
     const bgColorBtn = () => {
         setBgColor(!bgColor)
         if (bgColor === true) {
