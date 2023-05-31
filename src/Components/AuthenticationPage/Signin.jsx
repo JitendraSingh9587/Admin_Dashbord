@@ -60,9 +60,9 @@ function Signin() {
             setOpen(true);
             setMeassage("Super Admin credentials are correct. The login process has begun.")
             setLoader(true)
-            cookies.set("loggedin", true, { path: "/" });
-            cookies.set("redirect", 1, { path: "/" });
             setTimeout(() => {
+                cookies.set("loggedin", true, { path: "/" });
+                cookies.set("redirect", 1, { path: "/" });
                 navigate("/home")
             }, 2000);
 
@@ -71,9 +71,9 @@ function Signin() {
             setMeassage("Your credentials are correct. The login process has begun.")
             setOpen(true);
             setLoader(true)
-            cookies.set("loggedin", true, { path: "/" });
-            cookies.set("redirect", 1, { path: "/" });
             setTimeout(() => {
+                cookies.set("loggedin", true, { path: "/" });
+                cookies.set("redirect", 1, { path: "/" });
                 navigate("/home")
             }, 2000);
         }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './Navbar.module.css';
 import BackgroundColorImg from '../../Images/Comman/Theme Button.svg';
 import BackgroundColorImgDark from '../../Images/Comman/ThemeDarkBtn.svg';
@@ -7,12 +7,16 @@ import { Avatar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CircularLoader from '../../Loaders/CircularLoader/CircularLoader';
 import Cookies from 'universal-cookie';
+import { UserNavData } from '../../Routers/AuthRoutesWrapper';
 
 
 function Navbar() {
     const [bgColor, setbgColor] = useState(false)
     const [userOptions, setUserOptions] = useState(false)
     const [waitLoader, setWaitLoader] = useState(false)
+
+    // useContext for navbar data
+    const Userdata = useContext(UserNavData)
 
     // UseNavigate in varibale
     const navigate = useNavigate()
@@ -68,7 +72,7 @@ function Navbar() {
                 <div>
                     <div className={styles.UserInfoNavbar}>
                         <div className={styles.userInfoWrapper}>
-                            <h1>Safelet</h1>
+                            <h1>{Userdata.name}</h1>
                             <Avatar src='' onClick={EditLogoutAction} className={styles.avatarnavbar} sx={{ width: 35, height: 35 }} />
                         </div>
                         {userOptions && <div className={styles.LogoutEditPositionWrapper}>
