@@ -46,7 +46,7 @@ function Signin() {
 
         if (login === "true" && redirect !== 0) {
             if (redirect === "1") {
-                navigate("/home")
+                navigate("/dashboard")
             }
         }
     })
@@ -63,7 +63,7 @@ function Signin() {
             setTimeout(() => {
                 cookies.set("loggedin", true, { path: "/" });
                 cookies.set("redirect", 1, { path: "/" });
-                navigate("/home")
+                navigate("/dashboard")
             }, 2000);
 
 
@@ -74,7 +74,7 @@ function Signin() {
             setTimeout(() => {
                 cookies.set("loggedin", true, { path: "/" });
                 cookies.set("redirect", 1, { path: "/" });
-                navigate("/home")
+                navigate("/dashboard")
             }, 2000);
         }
         else {

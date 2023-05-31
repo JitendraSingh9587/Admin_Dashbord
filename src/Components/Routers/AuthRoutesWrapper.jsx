@@ -21,7 +21,7 @@ function AuthRoutesWrapper() {
                 <Routes>
                     <Route path="/" element={<Signin />} />
 
-                    <Route path="/home" element={<ProtectedRoute component={<HomePage />} />} />
+                    <Route path="/dashboard" element={<ProtectedRoute component={<HomePage />} />} />
                     {/* Error page */}
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>

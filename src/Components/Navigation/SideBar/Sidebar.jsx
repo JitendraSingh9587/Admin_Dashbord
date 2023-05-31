@@ -9,43 +9,53 @@ import activity from '../../Images/Sidebar/activity.svg'
 import alarm from '../../Images/Sidebar/alarm.svg'
 import alarmRecived from '../../Images/Sidebar/alarmRecived.svg'
 import Gloabe from '../../Images/Sidebar/Gloabe.svg'
+import { NavLink } from 'react-router-dom'
 
 const SidebarData = [
     {
         name: "Dashboard",
-        Img: Dashbord
+        Img: Dashbord,
+        to: "/dashboard"
     },
     {
         name: "User App Installed",
-        Img: AppInstalled
+        Img: AppInstalled,
+        to: "/appinstalled"
     },
     {
         name: "User have guardian",
-        Img: guardian
+        Img: guardian,
+        to: "/guardian"
     },
     {
         name: "number of guardian",
-        Img: guardianNumber
+        Img: guardianNumber,
+        to: "/numberofguardian"
     },
     {
         name: "user connect safe",
-        Img: connectsafe
+        Img: connectsafe,
+        to: "/connectsafe"
     },
     {
         name: "user last week activity",
-        Img: activity
+        Img: activity,
+        to: "/activity"
     },
     {
         name: "send out alarm",
-        Img: alarm
+        Img: alarm,
+        to: "/alarm"
     },
     {
         name: "received alarm",
-        Img: alarmRecived
+        Img: alarmRecived,
+        to: "/alarmrecived"
     },
     {
         name: "user per country",
-        Img: Gloabe
+        Img: Gloabe,
+        to: "/country"
     },
 ]
 
@@ -53,19 +63,20 @@ function Sidebar() {
     return (
         <div className={styles.SidebarWrapper}>
             <div className={styles.SidebarContainer}>
-                {SidebarData.map((item, key) => (
-
-                    <div key={key} className={styles.SidebarBtnWrapper}>
-                        <div className={styles.SidebarBtnWrapperImage}>
-                            <img src={item.Img} alt="" />
-                        </div>
-                        <div className={styles.SidebarBtnWrapperText}>{item.name}</div>
-                    </div>
-                ))}
+                <nav id="sidebar">
+                    {SidebarData.map((item, key) => (
+                        <NavLink to={item.to} key={key} className={styles.SidebarBtnWrapper}>
+                            <div className={styles.SidebarBtnWrapperImage}>
+                                <img src={item.Img} alt="" />
+                            </div>
+                            <div className={styles.SidebarBtnWrapperText}>{item.name}</div>
+                        </NavLink>
+                    ))}
+                </nav>
 
             </div>
 
-        </div>
+        </div >
     )
 }
 
