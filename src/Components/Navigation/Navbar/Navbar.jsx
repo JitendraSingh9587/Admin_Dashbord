@@ -5,11 +5,14 @@ import BackgroundColorImgDark from '../../Images/Comman/ThemeDarkBtn.svg';
 import Logo from '../../Images/Comman/Logo.svg';
 import { Avatar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import CircularLoader from '../../Loaders/CircularLoader/CircularLoader';
+import Cookies from 'universal-cookie';
 
 
 function Navbar() {
     const [bgColor, setbgColor] = useState(false)
     const [userOptions, setUserOptions] = useState(false)
+    const [waitLoader, setWaitLoader] = useState(false)
 
     // UseNavigate in varibale
     const navigate = useNavigate()
@@ -35,8 +38,22 @@ function Navbar() {
         setUserOptions(!userOptions)
     }
 
+    // Logout Function
+    const Logout = () => {
+        const cookies = new Cookies();
+        setWaitLoader(true)
+        setUserOptions(false)
+        setTimeout(() => {
+            cookies.remove("loggedin") // Removing Cookies From local storage
+            cookies.remove("redirect") // Removing Cookies From local storage
+            setWaitLoader(false)
+            navigate("/")
+        }, 1000);
+    }
+
     return (
         <>
+            {waitLoader && <CircularLoader />}
             <div className={styles.NavbarWrapper}>
                 <div>
                     <div className={styles.Bgcolorwrapper}>
@@ -57,7 +74,7 @@ function Navbar() {
                         {userOptions && <div className={styles.LogoutEditPositionWrapper}>
                             <div className={styles.userEditLogoutWrapper}>
                                 <button>Edit</button>
-                                <button>Log Out</button>
+                                <button onClick={Logout}>Log Out</button>
                             </div>
                         </div>}
                     </div>
