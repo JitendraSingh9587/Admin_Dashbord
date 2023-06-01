@@ -1,0 +1,42 @@
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    background: #E6E6E6;
+    border-radius: 15px 15px 0px 0px;
+    padding: 42px 20px;
+    position: fixed;
+    bottom: 0;
+    max-width: 80.3%;
+    width: 100%;
+    right: 0;
+}
+
+.copyrighttext {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #191919;
+}
+
+.TermsandPrivacy {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #5858FA;
+}
+
+.termsandprivacybreacker {
+    border-right: 1px solid #000000;
+    margin: 0 15px;
+    height: 15px;
+}
+
+.githubAccount {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #191919;
+}

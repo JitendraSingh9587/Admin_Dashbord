@@ -9,6 +9,7 @@ import editimage from '../Images/Comman/Edit.svg'
 import EditPencil from '../Images/Comman/EditPencil.svg'
 import userimage from '../Images/Comman/user.svg'
 import closeimage from '../Images/Comman/Close button.svg'
+import Footer from '../Navigation/Footer/Footer'
 
 
 function ProfilePage() {
@@ -78,6 +79,7 @@ function ProfilePage() {
     return (
         <>
             <Navbar />
+            <Footer />
             <Grid container className={CommanCss.GridWrapper}>
                 <Grid item xl={2.1} sm={2.3}>
                     <Sidebar />
