@@ -5,6 +5,7 @@ import ProtectedRoute from './ProtectedRoute'
 import HomePage from '../Home-Page/HomePage'
 import ErrorPage from '../ErrorPage/ErrorPage'
 import hacker from '../Images/Comman/hacker.png';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 // Context api for navbar data
 export const UserNavData = createContext()
@@ -12,7 +13,8 @@ export const UserNavData = createContext()
 function AuthRoutesWrapper() {
     const [userdata, setUserdata] = useState({
         name: "jitendra singh",
-        image: hacker
+        image: hacker,
+        email: "jitendra@singh.com"
     })
     let value = { userdata, setUserdata }
     return (
@@ -22,6 +24,7 @@ function AuthRoutesWrapper() {
                     <Route path="/" element={<Signin />} />
 
                     <Route path="/dashboard" element={<ProtectedRoute component={<HomePage />} />} />
+                    <Route path="/profile" element={<ProtectedRoute component={<ProfilePage />} />} />
                     {/* Error page */}
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>

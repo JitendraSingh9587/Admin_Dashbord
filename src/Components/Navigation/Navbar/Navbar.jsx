@@ -55,6 +55,11 @@ function Navbar() {
         }, 1000);
     }
 
+    // Profile Function
+    const Profile = () => {
+        navigate("/profile")
+    }
+
     return (
         <>
             {waitLoader && <CircularLoader />}
@@ -77,7 +82,7 @@ function Navbar() {
                         </div>
                         {userOptions && <div className={styles.LogoutEditPositionWrapper}>
                             <div className={styles.userEditLogoutWrapper}>
-                                <button>Edit</button>
+                                <button onClick={Profile}>Profile</button>
                                 <button onClick={Logout}>Log Out</button>
                             </div>
                         </div>}
