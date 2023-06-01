@@ -12,14 +12,46 @@ import closeimage from '../Images/Comman/Close button.svg'
 
 
 function ProfilePage() {
-    const [open, setOpen] = useState(true)
     // useContext for navbar data
     const { userdata } = useContext(UserNavData)
+
+    const [open, setOpen] = useState(false)
+    const [useredit, setuseredit] = useState({
+        name: userdata.name,
+        email: userdata.email
+    })
 
     // Modal Close Function
     const handleClose = () => {
         setOpen(false)
     }
+
+    // Modal open Function
+    const handleopen = () => {
+        setOpen(true)
+    }
+
+    // handle edit name
+    const handleNameChange = (e) => {
+        setuseredit(prevState => ({
+            ...prevState,
+            name: e.target.value
+        }));
+    }
+    // handle edit Email
+    const handleEmailChange = (e) => {
+        setuseredit(prevState => ({
+            ...prevState,
+            email: e.target.value
+        }));
+    }
+    // handle Update 
+    const handleUpdate = (e) => {
+        e.preventDefault()
+        console.log(useredit);
+        setOpen(false)
+    }
+
     return (
         <>
             <Navbar />
@@ -53,7 +85,7 @@ function ProfilePage() {
                                 <div className={styles.UserinputDisabled}>
                                     <TextField className={styles.UserDisableInputFiled} value={userdata.email} label="Email" variant="outlined" type='email' fullWidth required disabled />
                                 </div>
-                                <div className={styles.editUserDetailsWrapper}>
+                                <div onClick={handleopen} className={styles.editUserDetailsWrapper}>
                                     <div className={styles.edituserPencil}>
                                         <img src={EditPencil} alt="" />
                                     </div>
@@ -77,15 +109,15 @@ function ProfilePage() {
                     </div>
                     <div className={styles.ModalInputWrapper}>
                         <div className={styles.UserinputModal}>
-                            <TextField className={styles.UserDisableInputFiled} value={userdata.name} label="Name" variant="outlined" type='email' fullWidth required />
+                            <TextField onChange={handleNameChange} className={styles.UserDisableInputFiled} defaultValue={userdata.name} label="Name" variant="outlined" type='email' fullWidth required />
                         </div>
                         <div className={styles.UserinputModal}>
-                            <TextField className={styles.UserDisableInputFiled} value={userdata.email} label="Email" variant="outlined" type='email' fullWidth required />
+                            <TextField onChange={handleEmailChange} className={styles.UserDisableInputFiled} defaultValue={userdata.email} label="Email" variant="outlined" type='email' fullWidth required />
                         </div>
                     </div>
                     <div className={styles.Footerbtns}>
-                        <Button className={styles.footerbtnupdate}>Update</Button>
-                        <Button className={styles.footerbtncancel}>Cancel</Button>
+                        <Button onClick={handleUpdate} className={styles.footerbtnupdate}>Update</Button>
+                        <Button onClick={handleClose} className={styles.footerbtncancel}>Cancel</Button>
                     </div>
                 </Box>
             </Modal>
