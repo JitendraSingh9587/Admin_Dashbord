@@ -46,5 +46,23 @@
 
 .userinfo h6 {
     font-weight: 400;
+}
 
+.editIconwrapper {
+    max-width: 30px;
+    border-radius: 0 !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.editIconwrapper img {
+    width: 100%;
+}
+
+.ImageWrapperContainer {
+    max-width: 100px;
+    max-height: 100px;
+    position: relative;
 }

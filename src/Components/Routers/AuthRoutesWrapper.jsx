@@ -11,12 +11,15 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 export const UserNavData = createContext()
 
 function AuthRoutesWrapper() {
+    const [bgColor, setBgColor] = useState(false)
     const [userdata, setUserdata] = useState({
         name: "jitendra singh",
         image: hacker,
         email: "jitendra@singh.com"
     })
-    let value = { userdata, setUserdata }
+
+
+    let value = { userdata, setUserdata, bgColor, setBgColor }
     return (
         <>
             <UserNavData.Provider value={value}>

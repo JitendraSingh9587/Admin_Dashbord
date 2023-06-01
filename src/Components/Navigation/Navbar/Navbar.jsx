@@ -11,12 +11,12 @@ import { UserNavData } from '../../Routers/AuthRoutesWrapper';
 
 
 function Navbar() {
-    const [bgColor, setbgColor] = useState(false)
+    // const [bgColor, setbgColor] = useState(false)
     const [userOptions, setUserOptions] = useState(false)
     const [waitLoader, setWaitLoader] = useState(false)
 
     // useContext for navbar data
-    const { userdata } = useContext(UserNavData)
+    const { userdata, bgColor, setBgColor } = useContext(UserNavData)
 
     // UseNavigate in varibale
     const navigate = useNavigate()
@@ -28,7 +28,7 @@ function Navbar() {
 
     // Background Color Function
     const bgColorBtn = () => {
-        setbgColor(!bgColor)
+        setBgColor(!bgColor)
         if (bgColor === true) {
             document.querySelector('body').style.background = "#fff";
         }

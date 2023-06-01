@@ -5,6 +5,8 @@ import Navbar from '../Navigation/Navbar/Navbar'
 import { Grid } from '@mui/material'
 import Sidebar from '../Navigation/SideBar/Sidebar'
 import { UserNavData } from '../Routers/AuthRoutesWrapper'
+import editimage from '../Images/Comman/Edit.svg'
+import userimage from '../Images/Comman/user.svg'
 
 
 function ProfilePage() {
@@ -22,8 +24,13 @@ function ProfilePage() {
                         <div className={styles.ProfileWrapper}>
                             <h1>Profile Details</h1>
                             <div className={styles.UserImageDataWrapper}>
-                                <div className={styles.UserimageWrapper}>
-                                    <img src={userdata.image} alt="user" />
+                                <div className={styles.ImageWrapperContainer}>
+                                    <div className={styles.UserimageWrapper}>
+                                        <img src={userdata.image ? userdata.image : userimage} alt="user" />
+                                    </div>
+                                    <div className={styles.editIconwrapper}>
+                                        <img className={styles.editlogo} src={editimage} alt="edit" />
+                                    </div>
                                 </div>
                                 <span className={styles.sidebracker}></span>
                                 <div className={styles.userinfo}>
