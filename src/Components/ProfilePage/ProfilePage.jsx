@@ -13,7 +13,7 @@ import closeimage from '../Images/Comman/Close button.svg'
 
 function ProfilePage() {
     // useContext for navbar data
-    const { userdata } = useContext(UserNavData)
+    const { userdata, setUserdata } = useContext(UserNavData)
 
     const [open, setOpen] = useState(false)
     const [useredit, setuseredit] = useState({
@@ -49,6 +49,13 @@ function ProfilePage() {
     const handleUpdate = (e) => {
         e.preventDefault()
         console.log(useredit);
+        setUserdata(
+            prevState => ({
+                ...prevState,
+                name: useredit.name,
+                email: useredit.email,
+            })
+        )
         setOpen(false)
     }
 
