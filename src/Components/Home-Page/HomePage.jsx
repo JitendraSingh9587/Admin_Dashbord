@@ -10,11 +10,10 @@ function HomePage() {
         <>
             <Navbar />
             <Grid container className={CommanCss.GridWrapper}>
-                <Grid item xl={1.9} sm={2.3}>
+                <Grid item xl={2.1} sm={2.3}>
                     <Sidebar />
                 </Grid >
-                <Grid item xl={10.1} sm={9.7}>
-
+                <Grid item xl={9.9} sm={9.7}>
                 </Grid >
             </Grid>
         </>

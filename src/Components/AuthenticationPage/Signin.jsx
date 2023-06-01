@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './Signin.module.css';
 import Logo from '../Images/Comman/Logo.svg';
 import BackgroundColorImg from '../Images/Comman/Theme Button.svg';
@@ -8,6 +8,7 @@ import { Alert, Avatar, Button, Grid, Snackbar, TextField } from '@mui/material'
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 import ProgressLoader from '../Loaders/Progressbar/ProgressLoader';
+import { UserNavData } from '../Routers/AuthRoutesWrapper';
 
 
 
@@ -18,8 +19,11 @@ function Signin() {
     const [open, setOpen] = useState(false)
     const [erroropen, setErrorpen] = useState(false)
     const [meassage, setMeassage] = useState("")
-    const [bgColor, setBgColor] = useState(false)
+    // const [bgColor, setBgColor] = useState(false)
     const [loader, setLoader] = useState(false)
+
+    const { bgColor, setBgColor } = useContext(UserNavData)
+
 
     // Snackbar Position Varibale
     const horizontal = "right"
