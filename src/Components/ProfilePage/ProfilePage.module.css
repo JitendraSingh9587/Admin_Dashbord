@@ -66,3 +66,40 @@
     max-height: 100px;
     position: relative;
 }
+
+.UserinputWrapper {
+    margin: 50px 20px;
+}
+
+.UserinputDisabled {
+    max-width: 350px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.UserDisableInputFiled {
+    text-transform: uppercase;
+}
+
+.edituserPencil {
+    max-width: 30px;
+    margin-right: 10px;
+}
+
+.edituserPencil img {
+    width: 100%;
+}
+
+.editUserDetailsWrapper span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #EC6453;
+}
+
+.editUserDetailsWrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
