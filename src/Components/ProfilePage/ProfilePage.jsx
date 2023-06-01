@@ -45,6 +45,22 @@ function ProfilePage() {
             email: e.target.value
         }));
     }
+    // call input image function
+    const updateprofilePic = () => {
+        document.querySelector("#UploadProfilePic").click()
+    }
+
+    // Upload New image
+    function handleImageChange(e) {
+        console.log(e.target.files);
+        setUserdata(
+            prevState => ({
+                ...prevState,
+                image: URL.createObjectURL(e.target.files[0]),
+            })
+        )
+    }
+
     // handle Update 
     const handleUpdate = (e) => {
         e.preventDefault()
@@ -75,8 +91,9 @@ function ProfilePage() {
                                     <div className={styles.UserimageWrapper}>
                                         <img src={userdata.image ? userdata.image : userimage} alt="user" />
                                     </div>
-                                    <div className={styles.editIconwrapper}>
+                                    <div onClick={updateprofilePic} className={styles.editIconwrapper}>
                                         <img className={styles.editlogo} src={editimage} alt="edit" />
+                                        <input type="file" style={{ display: "none" }} id='UploadProfilePic' onChange={handleImageChange} />
                                     </div>
                                 </div>
                                 <span className={styles.sidebracker}></span>
