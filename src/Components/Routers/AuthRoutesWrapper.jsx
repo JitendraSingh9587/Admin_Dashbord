@@ -2,10 +2,10 @@ import React, { createContext, useState } from 'react'
 import { Routes, Route } from "react-router-dom"
 import Signin from '../AuthenticationPage/Signin';
 import ProtectedRoute from './ProtectedRoute'
-import HomePage from '../Home-Page/HomePage'
 import ErrorPage from '../ErrorPage/ErrorPage'
 import hacker from '../Images/Comman/hacker.png';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import DashbordPage from '../Dashbord/Dashbord';
 
 // Context api for navbar data
 export const UserNavData = createContext()
@@ -26,7 +26,7 @@ function AuthRoutesWrapper() {
                 <Routes>
                     <Route path="/" element={<Signin />} />
 
-                    <Route path="/dashboard" element={<ProtectedRoute component={<HomePage />} />} />
+                    <Route path="/dashboard" element={<ProtectedRoute component={<DashbordPage />} />} />
                     <Route path="/profile" element={<ProtectedRoute component={<ProfilePage />} />} />
                     {/* Error page */}
                     <Route path="*" element={<ErrorPage />} />
